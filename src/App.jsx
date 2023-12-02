@@ -7,7 +7,7 @@ function App() {
     {
       id: 1,
       title: 'Finish Progate React Course',
-      completed: false,
+      completed: true,
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ function App() {
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>My Todo List</h1>
-      <Todos todos={todos}/>
+      <Todos todos={todos} toggleCompleted={toggleCompleted}/>
     </div>
   )
 }
