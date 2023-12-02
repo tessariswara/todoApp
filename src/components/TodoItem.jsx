@@ -1,22 +1,25 @@
 import React from "react";
 
-const TodoItem = ({ todo }) => {
+const TodoItem = ({ todo, toggleCompleted }) => {
     const getTodoTitleStyle = () => {
-      if (todos.completed === true) {
+      if (todo.completed === true) {
         return { textDecoration: 'line-through' }
       } else {
         return { textDecoration: 'none' }
       }
     }
   
-
     return (
-        <div style={ styles.todoItem }>
-            <input type="checkbox" style={styles.checkbox} />
-            <p style={getTodoTitleStyle()}>{todo.title}</p>
-        </div>
-    );
-}
+      <div style={styles.todoItem}>
+        <input
+          type="checkbox"
+          style={styles.checkbox}
+          onChange={() => toggleCompleted(todo.id)}
+        />
+        <p style={getTodoTitleStyle()}>{todo.title}</p>
+      </div>
+    )
+  }
 
 const styles = {
     todoItem: {
